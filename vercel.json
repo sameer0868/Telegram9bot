@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      # Telegram Webhook यहाँ आएगा
+      "src": "/(.*)",
+      "dest": "main.py"
+    }
+  ],
+  "env": {
+    # ⚠️ यहाँ अपने Vercel ऐप का डोमेन नाम सेट करें
+    "WEBHOOK_HOST": "YOUR_VERCEL_APP_URL.vercel.app" 
+    # Vercel के UI में BOT_TOKEN सेट करना बेहतर है
+  }
+}
